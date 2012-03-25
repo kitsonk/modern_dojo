@@ -1,0 +1,10 @@
+{
+	"title": "Modern Dojo",
+	"author": "Kitson Kelly",
+	"dojoVersion": "1.7",
+	"difficulty": "Intermediate",
+	"namespaces":["dojo","dijit","dojox"],
+	"categories":["Array", "Deferreds", "DOM", "Events", "Forms", "Promises", "Query", "Widgets"],
+	"sponsor":""
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: on</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<link rel="stylesheet" href="../../resources/style/demo.css" media="screen">
+		<style type="text/css">
+		  @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
+		  @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/document.css";
+		</style>
+		<!-- load dojo and provide config via data attribute -->
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js"
+				data-dojo-config="async: true">
+		</script>
+		<script>
+  		 require(["dijit/form/Button", "dojo/domReady!"], function(Button){
+         var button = new Button({
+           label: "Click Me!"
+         }, "someNode");
+
+         // Sets the event handling for the button
+         button.on("click", function(e){
+           console.log("I was clicked!", e);
+         });
+       });
+		</script>
+	</head>
+	<body class="claro">
+	  <h1>Demo: on</h1>
+	  <button id="someNode" type="button"></button>
+	</body>
+</html>
