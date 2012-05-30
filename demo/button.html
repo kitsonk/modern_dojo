@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Demo: button</title>
 		<link rel="stylesheet" href="style.css" media="screen">
-		<link rel="stylesheet" href="../../resources/style/demo.css" media="screen">
+		<link rel="stylesheet" href="../../../resources/style/demo.css" media="screen">
 		<style type="text/css">
 		  @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
 		  @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/document.css";
@@ -14,16 +14,18 @@
 				data-dojo-config="async: true">
 		</script>
 		<script>
-  		 require(["dojo/dom", "dojo/on", "dojo/parser", "dijit/registry", "dijit/form/Button", "dojo/domReady!"], 
-       function(dom, on, parser, registry){
-         parser.parse();
-
+  		 require(["dojo/dom", "dojo/on", "dojo/parser", "dojo/ready", "dijit/registry", "dijit/form/Button"], 
+       function(dom, on, parser, ready, registry){
          var myClick = function(evt){
            console.log("I was clicked");
          };
 
-         on(dom.byId("button1"), "click", myClick);
-         on(registry.byId("button2"), "click", myClick);
+         ready(function(){
+           parser.parse();
+
+           on(dom.byId("button1"), "click", myClick);
+           on(registry.byId("button2"), "click", myClick);
+         });
        });
 		</script>
 	</head>
